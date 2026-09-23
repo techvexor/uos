@@ -79,8 +79,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "author", content: "Uttarakhand Open School" },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
+      {
+        name: "description",
+        content:
+          "Uttarakhand Open School (UOS) Dehradun offers recognised Class 10 and Class 12 open schooling admissions, result updates, examinations, and student services.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Uttarakhand Open School" },
+      { property: "og:locale", content: "en_IN" },
+      { property: "og:url", content: "https://uttarakhandopenschool.com" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -88,10 +99,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "canonical", href: "https://uttarakhandopenschool.com" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@600;700;800&display=swap" },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@600;700;800&display=swap",
+      },
+      { rel: "icon", href: "/images/logo.png", type: "image/png" },
+      { rel: "sitemap", href: "https://uttarakhandopenschool.com/sitemap.xml" },
     ],
   }),
   shellComponent: RootShell,
@@ -119,7 +135,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteShell><Outlet /></SiteShell>
+      <SiteShell>
+        <Outlet />
+      </SiteShell>
     </QueryClientProvider>
   );
 }

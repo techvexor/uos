@@ -22,6 +22,7 @@ import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as DownloadsRouteImport } from './routes/downloads'
 import { Route as EligibilityRouteImport } from './routes/eligibility'
 import { Route as EnrollmentCardRouteImport } from './routes/enrollment-card'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FeeStructureRouteImport } from './routes/fee-structure'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as NoticesRouteImport } from './routes/notices'
@@ -97,6 +98,11 @@ const EnrollmentCardRoute = EnrollmentCardRouteImport.update({
   path: '/enrollment-card',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FeeStructureRoute = FeeStructureRouteImport.update({
   id: '/fee-structure',
   path: '/fee-structure',
@@ -157,6 +163,7 @@ export interface FileRoutesByFullPath {
   '/downloads': typeof DownloadsRoute
   '/eligibility': typeof EligibilityRoute
   '/enrollment-card': typeof EnrollmentCardRoute
+  '/faq': typeof FaqRoute
   '/fee-structure': typeof FeeStructureRoute
   '/login': typeof LoginRoute
   '/notices': typeof NoticesRoute
@@ -181,6 +188,7 @@ export interface FileRoutesByTo {
   '/downloads': typeof DownloadsRoute
   '/eligibility': typeof EligibilityRoute
   '/enrollment-card': typeof EnrollmentCardRoute
+  '/faq': typeof FaqRoute
   '/fee-structure': typeof FeeStructureRoute
   '/login': typeof LoginRoute
   '/notices': typeof NoticesRoute
@@ -206,6 +214,7 @@ export interface FileRoutesById {
   '/downloads': typeof DownloadsRoute
   '/eligibility': typeof EligibilityRoute
   '/enrollment-card': typeof EnrollmentCardRoute
+  '/faq': typeof FaqRoute
   '/fee-structure': typeof FeeStructureRoute
   '/login': typeof LoginRoute
   '/notices': typeof NoticesRoute
@@ -232,6 +241,7 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/eligibility'
     | '/enrollment-card'
+    | '/faq'
     | '/fee-structure'
     | '/login'
     | '/notices'
@@ -256,6 +266,7 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/eligibility'
     | '/enrollment-card'
+    | '/faq'
     | '/fee-structure'
     | '/login'
     | '/notices'
@@ -280,6 +291,7 @@ export interface FileRouteTypes {
     | '/downloads'
     | '/eligibility'
     | '/enrollment-card'
+    | '/faq'
     | '/fee-structure'
     | '/login'
     | '/notices'
@@ -305,6 +317,7 @@ export interface RootRouteChildren {
   DownloadsRoute: typeof DownloadsRoute
   EligibilityRoute: typeof EligibilityRoute
   EnrollmentCardRoute: typeof EnrollmentCardRoute
+  FaqRoute: typeof FaqRoute
   FeeStructureRoute: typeof FeeStructureRoute
   LoginRoute: typeof LoginRoute
   NoticesRoute: typeof NoticesRoute
@@ -409,6 +422,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnrollmentCardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fee-structure': {
       id: '/fee-structure'
       path: '/fee-structure'
@@ -489,6 +509,7 @@ const rootRouteChildren: RootRouteChildren = {
   DownloadsRoute: DownloadsRoute,
   EligibilityRoute: EligibilityRoute,
   EnrollmentCardRoute: EnrollmentCardRoute,
+  FaqRoute: FaqRoute,
   FeeStructureRoute: FeeStructureRoute,
   LoginRoute: LoginRoute,
   NoticesRoute: NoticesRoute,
