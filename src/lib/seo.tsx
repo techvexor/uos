@@ -29,7 +29,7 @@ export function buildOrganizationSchema() {
     name: "Uttarakhand Open School, Dehradun",
     alternateName: "UOS",
     url: "https://uttarakhandopenschool.com",
-    logo: "https://uttarakhandopenschool.com/logo.png",
+    logo: "https://uttarakhandopenschool.com/images/logo2.png",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Dehradun",

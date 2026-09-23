@@ -31,7 +31,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             aria-label="Uttarakhand Open School home"
           >
             <img
-              src="/images/logo.png"
+              src="/images/logo2.png"
               alt="Uttarakhand Open School logo"
               className="h-14 w-14 shrink-0 object-contain"
             />
